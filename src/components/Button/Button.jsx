@@ -1,11 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-const Button = ({ style, type = 'button ', text, icon = '', onClick }) => {
+const Button = ({ style = 'default', type = 'button', text, icon = '', onClick }) => {
   switch (style) {
     case 'primary':
       return (
         <button
-          className='text-md font-medium px-3 py-2 rounded-md bg-blue-700 hover:bg-blue-900'
+          className='text-md font-medium px-3 py-2 rounded-md bg-button-blue-default hover:bg-button-blue-hovered'
           type={type}
           onClick={onClick}
         >
@@ -16,7 +16,7 @@ const Button = ({ style, type = 'button ', text, icon = '', onClick }) => {
     case 'danger':
       return (
         <button
-          className='text-md font-medium px-3 py-2 rounded-md bg-red-500 hover:bg-red-700'
+          className='text-md font-medium px-3 py-2 rounded-md bg-button-red-default hover:bg-button-red-hovered'
           type={type}
           onClick={onClick}
         >
@@ -24,8 +24,18 @@ const Button = ({ style, type = 'button ', text, icon = '', onClick }) => {
           { text }
         </button>
       );
-    
+    default:
+      return (
+        <button
+          className='text-md font-medium px-3 py-2 rounded-md bg-button-black-default hover:bg-button-black-hovered'
+          type={type}
+          onClick={onClick}
+        >
+          { icon && <i className={icon + ' mr-1'}></i> }
+          { text }
+        </button>
+      )  
   }
-}
+};
 
 export default Button

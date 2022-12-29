@@ -26,9 +26,9 @@ const Navbar = () => {
 
   return (
     <header className="sticky top-0 z-10"> 
-      <nav className="bg-brand-blue-500 drop-shadow-md px-4 py-4 flex justify-between align-middle md:px-9 md:py-6">
+      <nav className="bg-brand-blue-500 drop-shadow-md px-4 py-4 flex justify-between items-center md:px-9 md:py-6">
         <a href="#home">
-          <img src={navLogo} alt="Primidi" />
+          <img className="h-5" src={navLogo} alt="Primidi Logo" />
         </a>
         <button
           type="button"
@@ -41,7 +41,7 @@ const Navbar = () => {
           { navigations.map((navigation, index) => (
             <li key={index}>
               <a
-                className="hover:text-brand-red active:text-brand-red focus:text-brand-red focus:border-b-2"
+                className="hover:text-brand-red hover:underline hover:underline-offset-8 active:text-brand-red focus:text-brand-red focus:underline focus:underline-offset-8 transition duration-500"
                 href={navigation.path}
               >
                 { navigation.text }
@@ -52,7 +52,7 @@ const Navbar = () => {
       </nav>
       {
         toggleMenu && (
-          <div className={'w-full md:w-auto md:hidden'}>
+          <div className="fixed w-full md:w-auto md:hidden">
             <ul className="flex flex-col p-4 rounded-lg bg-brand-blue-50">
               {
                 navigations.map((navigation, index) => (
@@ -74,4 +74,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar
+export default Navbar;

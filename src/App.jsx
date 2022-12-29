@@ -1,16 +1,13 @@
 import React from 'react'
 import './App.css'
-import Button from './components/Button/Button'
 import Navbar from './components/Navbar/Navbar'
-import Home from './pages/Home'
+import Pages from './pages/Pages'
 
 const App = () => {
-  const handleClick = () => alert('Button clicked');
-
   return (
     <div className='App'>
       <Navbar />
-      <Home />
+      <Pages />
     </div>
   )
 }
